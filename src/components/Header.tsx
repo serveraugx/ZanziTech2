@@ -23,9 +23,11 @@ const Header = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
-              Zenjitech
-            </h1>
+            <img 
+              src="/ZanziTech2/assets/ZenjiTechreal.png" 
+              alt="ZenjiTech" 
+              className="h-10 w-auto transition-all duration-200 hover:scale-105"
+            />
           </div>
 
           {/* Desktop Navigation */}
@@ -34,7 +36,7 @@ const Header = () => {
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
+                className="text-white-700 hover:text-blue-600 transition-colors duration-200 font-medium"
               >
                 {item}
               </a>

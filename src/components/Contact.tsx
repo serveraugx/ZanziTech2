@@ -168,12 +168,17 @@ const Contact = () => {
               ))}
             </div>
 
-            {/* Map placeholder */}
-            <div className="bg-gradient-to-br from-blue-100 to-blue-50 rounded-2xl h-64 flex items-center justify-center border border-blue-200">
-              <div className="text-center">
-                <MapPin className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-                <p className="text-blue-800 font-medium">Interactive Map</p>
-                <p className="text-blue-600 text-sm">Stone Town, Zanzibar</p>
+            {/* Actual Leaflet Map */}
+            <div className="rounded-2xl h-64 overflow-hidden border border-blue-200">
+              <iframe
+                title="Majestic Cinema Location"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=39.1883%2C-6.1675%2C39.1943%2C-6.1635&amp;layer=mapnik&amp;marker=-6.165483590871528%2C39.191338152810175"
+                style={{ width: '100%', height: '100%', border: 'none' }}
+                allowFullScreen
+                loading="lazy"
+              ></iframe>
+              <div className="text-center py-2 bg-blue-50 text-blue-800 text-sm font-medium">
+                Majestic Cinema, Vuga Rd, Zanzibar
               </div>
             </div>
           </div>

@@ -1,3 +1,101 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Enhanced Background Animation Styles */
+@layer utilities {
+  .animation-delay-1000 {
+    animation-delay: 1s;
+  }
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  .animation-delay-3000 {
+    animation-delay: 3s;
+  }
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+  
+  /* Custom animations for background */
+  .bg-zoom-in {
+    animation: zoomIn 3s ease-in-out;
+  }
+  
+  .bg-slide-up {
+    animation: slideUp 3s ease-in-out;
+  }
+  
+  .bg-fade-scale {
+    animation: fadeScale 3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Radial gradient utility */
+  .bg-gradient-radial {
+    background: radial-gradient(circle, var(--tw-gradient-stops));
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(1.1);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(20px) scale(1.05);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeScale {
+  0% {
+    transform: scale(0.95) rotate(-1deg);
+    opacity: 0;
+    filter: blur(3px);
+  }
+  50% {
+    filter: blur(1px);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
+
+/* High quality image rendering */
+img, 
+div[style*="background-image"] {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+}
+
+/* Smooth transitions for better performance */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Parallax and depth effects */
+.parallax-bg {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.depth-layer {
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+}
